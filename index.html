@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -842,6 +841,57 @@ body{
   letter-spacing:.12em;text-transform:uppercase;
   color:#8AA0AA;white-space:nowrap;
 }
+
+/* -- EXPORT PANEL -- */
+.export-panel{margin-top:16px;background:#F2F4F2;border:1px solid #E0E8E5;border-radius:10px;overflow:hidden;}
+.export-panel-head{padding:12px 16px;background:#1B3D4F;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;}
+.export-panel-title{font-family:'DM Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.7);display:flex;align-items:center;gap:7px;}
+.export-panel-body{padding:14px 16px;display:flex;flex-direction:column;gap:10px;}
+.export-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.export-btn{display:flex;align-items:center;gap:7px;padding:10px 18px;border:none;border-radius:8px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;cursor:pointer;transition:all .15s;letter-spacing:.02em;white-space:nowrap;}
+.export-btn.pdf{background:#F07B20;color:#fff;}.export-btn.pdf:hover{background:#D96A10;}
+.export-btn.panda{background:#2ABFAA;color:#fff;}.export-btn.panda:hover{background:#229B8A;}
+.export-btn.copy{background:#fff;color:#1B3040;border:1.5px solid #E0E8E5;}.export-btn.copy:hover{border-color:#2ABFAA;color:#2ABFAA;}
+.export-sep{height:1px;background:#E0E8E5;margin:2px 0;}
+.export-note{font-size:11px;color:#8AA0AA;line-height:1.5;}
+.export-note strong{color:#4A5E6A;font-weight:700;}
+.panda-api-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+.panda-input{flex:1;min-width:180px;padding:8px 12px;background:#fff;border:1.5px solid #E0E8E5;border-radius:8px;font-family:'Montserrat',sans-serif;font-size:12px;color:#1B3040;outline:none;transition:border-color .15s;}
+.panda-input:focus{border-color:#2ABFAA;}.panda-input::placeholder{color:#C5D5D0;}
+.panda-status{font-family:'DM Mono',monospace;font-size:10px;font-weight:700;padding:4px 12px;border-radius:999px;}
+.panda-status.idle{background:rgba(27,61,79,.07);color:#8AA0AA;border:1px solid #E0E8E5;}
+.panda-status.sending{background:rgba(42,191,170,.1);color:#2ABFAA;border:1px solid rgba(42,191,170,.25);}
+.panda-status.sent{background:rgba(34,180,100,.12);color:#16A865;border:1px solid rgba(34,180,100,.25);}
+.panda-status.error{background:rgba(224,82,82,.1);color:#E05252;border:1px solid rgba(224,82,82,.25);}
+.panda-template-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:4px;}
+.panda-select{flex:1;min-width:160px;padding:8px 12px;background:#fff;border:1.5px solid #E0E8E5;border-radius:8px;font-family:'Montserrat',sans-serif;font-size:12px;color:#1B3040;outline:none;appearance:none;}
+.panda-select:focus{border-color:#2ABFAA;}
+.view{display:none !important;}.view.on{display:block !important;animation:fadeUp .25s ease;}
+@media print{
+  body *{visibility:hidden;}
+  #printArea,#printArea *{visibility:visible;}
+  #printArea{position:fixed;top:0;left:0;right:0;bottom:0;background:#fff;padding:40px 56px;overflow:visible;font-family:'Montserrat',sans-serif;}
+  .print-header{margin-bottom:24px;padding-bottom:16px;border-bottom:3px solid #2ABFAA;}
+  .print-logo{font-size:18px;font-weight:900;color:#1B3040;margin-bottom:3px;}
+  .print-logo span{color:#2ABFAA;}
+  .print-meta{font-size:11px;color:#8AA0AA;}
+  .print-section{margin-bottom:18px;page-break-inside:avoid;}
+  .print-section-label{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#2ABFAA;margin-bottom:7px;padding-bottom:5px;border-bottom:1px solid #E0E8E5;}
+  .print-body{font-size:13px;color:#4A5E6A;line-height:1.7;white-space:pre-wrap;}
+  .print-tier-card{background:#F2F4F2;border-radius:8px;padding:12px 16px;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between;border:1px solid #E0E8E5;}
+  .print-tier-name{font-size:15px;font-weight:900;color:#1B3040;}
+  .print-tier-cat{font-size:11px;color:#8AA0AA;margin-top:2px;}
+  .print-tier-price{font-size:20px;font-weight:900;color:#F07B20;}
+  .print-roadmap{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:6px;}
+  .print-rm-card{background:#F2F4F2;border-radius:6px;padding:10px 12px;border:1px solid #E0E8E5;}
+  .print-rm-month{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8AA0AA;margin-bottom:3px;}
+  .print-rm-title{font-size:12px;font-weight:800;color:#1B3040;margin-bottom:4px;}
+  .print-rm-items{list-style:none;}
+  .print-rm-items li{font-size:11px;color:#4A5E6A;padding:2px 0;display:flex;gap:5px;}
+  .print-rm-items li::before{content:'>';color:#2ABFAA;font-size:10px;flex-shrink:0;}
+  .print-footer{margin-top:28px;padding-top:14px;border-top:1px solid #E0E8E5;font-size:11px;color:#8AA0AA;display:flex;justify-content:space-between;}
+  @page{margin:0;size:A4;}
+}
 </style>
 </head>
 <body>
@@ -974,9 +1024,75 @@ body{
       </div>
     </div>
 
-    <div class="phase" data-type="post">
+    <div class="phase" data-type="gate">
       <div class="phase-left">
         <div class="phase-num">Phase 05</div>
+        <div class="phase-dot-line"><div class="phase-dot"></div><div class="phase-connector"></div></div>
+      </div>
+      <div class="phase-right">
+        <div class="phase-card">
+          <span class="phase-tag"><i class="ti ti-file-description"></i> Post-Strategy Call</span>
+          <div class="phase-title">PandaDoc proposal &mdash; customised and sent</div>
+          <div class="phase-desc">Following the strategy call, the rep uses the AI Proposal Generator to produce a fully personalised proposal. All sections are reviewed and edited inline, then pushed directly to PandaDoc via API. The client receives a tracked, branded, e-signable document. The rep is notified when the client opens it and when they sign.</div>
+          <div class="phase-pills">
+            <span class="pill gold">AI-generated &middot; rep-reviewed</span>
+            <span class="pill">PDF download available</span>
+            <span class="pill">PandaDoc tracked link to client</span>
+            <span class="pill green">Client opens &rarr; rep notified</span>
+            <span class="pill pending">monday.com &rarr; Status: Proposal Sent</span>
+          </div>
+        </div>
+        <div class="milestone">
+          <div class="milestone-icon">&#128196;</div>
+          <div class="milestone-text"><strong>Setup fee note:</strong> Setup fees may be waived this week to create urgency and accelerate first revenue. Rep to apply discretion based on prospect engagement level.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase" data-type="gate">
+      <div class="phase-left">
+        <div class="phase-num">Phase 06</div>
+        <div class="phase-dot-line"><div class="phase-dot"></div><div class="phase-connector"></div></div>
+      </div>
+      <div class="phase-right">
+        <div class="phase-card">
+          <span class="phase-tag"><i class="ti ti-file-check"></i> Signed Proposal</span>
+          <div class="phase-title">Signed proposal &rarr; Kristine for invoicing</div>
+          <div class="phase-desc">Once the client signs the PandaDoc proposal, monday.com status updates automatically to &ldquo;Signed.&rdquo; The signed document is passed to <strong>Kristine (Christine)</strong> in accounting for invoice creation in ChargeOver. PandaDoc notifies the team on signature; monday.com automation triggers the handoff notification to Kristine with the client details and signed contract attached.</div>
+          <div class="phase-pills">
+            <span class="pill green">PandaDoc e-signature</span>
+            <span class="pill">Passed to Kristine (accounting)</span>
+            <span class="pill gold">Invoice created in ChargeOver</span>
+            <span class="pill pending">monday.com &rarr; Status: Signed &rarr; Notify Kristine</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase" data-type="gate">
+      <div class="phase-left">
+        <div class="phase-num">Phase 07</div>
+        <div class="phase-dot-line"><div class="phase-dot"></div><div class="phase-connector"></div></div>
+      </div>
+      <div class="phase-right">
+        <div class="phase-card">
+          <span class="phase-tag"><i class="ti ti-receipt"></i> Billing &amp; Collection</span>
+          <div class="phase-title">Invoice &amp; collection via ChargeOver</div>
+          <div class="phase-desc">Kristine builds out the ChargeOver library of services based on the four LeadStrong tiers. A dummy invoice at $0 is created for Israel&rsquo;s review before any live billing is activated. Once approved, ChargeOver handles recurring billing, payment collection, and dunning. Monthly invoices are generated automatically per the signed agreement.</div>
+          <div class="phase-pills">
+            <span class="pill gold">ChargeOver service library &mdash; to be built</span>
+            <span class="pill">Dummy invoice at $0 for Israel&rsquo;s review</span>
+            <span class="pill green">Recurring billing once approved</span>
+            <span class="pill">4 tiers mapped to ChargeOver products</span>
+            <span class="pill pending">monday.com &rarr; Deal created &rarr; Billing active</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase" data-type="post">
+      <div class="phase-left">
+        <div class="phase-num">Phase 08</div>
         <div class="phase-dot-line"><div class="phase-dot"></div><div class="phase-connector"></div></div>
       </div>
       <div class="phase-right">
@@ -996,7 +1112,7 @@ body{
 
     <div class="phase" data-type="post">
       <div class="phase-left">
-        <div class="phase-num">Phase 06</div>
+        <div class="phase-num">Phase 09</div>
         <div class="phase-dot-line"><div class="phase-dot"></div><div class="phase-connector"></div></div>
       </div>
       <div class="phase-right">
@@ -1016,7 +1132,7 @@ body{
 
     <div class="phase" data-type="post">
       <div class="phase-left">
-        <div class="phase-num">Phase 07</div>
+        <div class="phase-num">Phase 10</div>
         <div class="phase-dot-line"><div class="phase-dot"></div></div>
       </div>
       <div class="phase-right">
@@ -1342,8 +1458,42 @@ body{
           <div class="ab-note"><strong id="abProspect">&mdash;</strong> &middot; <span id="abNote">Review all sections before approving.</span></div>
           <div class="ab-actions">
             <button class="ab-btn reject" onclick="discardProposal()"><i class="ti ti-x"></i> Discard</button>
-            <button class="ab-btn copy" onclick="copyProposal()"><i class="ti ti-copy"></i> Copy</button>
-            <button class="ab-btn approve" onclick="approveProposal()"><i class="ti ti-check"></i> Approve &amp; send</button>
+            <button class="ab-btn copy" onclick="copyProposal()"><i class="ti ti-copy"></i> Copy text</button>
+            <button class="ab-btn approve" onclick="approveProposal()"><i class="ti ti-check"></i> Approve</button>
+          </div>
+        </div>
+        <div class="export-panel" id="exportPanel" style="display:none">
+          <div class="export-panel-head">
+            <span class="export-panel-title"><i class="ti ti-file-export"></i> Export proposal</span>
+            <span class="panda-status idle" id="pandaStatus">Ready</span>
+          </div>
+          <div class="export-panel-body">
+            <div class="export-row">
+              <button class="export-btn pdf" onclick="exportToPDF()"><i class="ti ti-file-type-pdf"></i> Download PDF</button>
+              <span class="export-note">Clean print-ready PDF - LeadStrong.ai branded, ready to attach to email.</span>
+            </div>
+            <div class="export-sep"></div>
+            <div class="export-note" style="margin-bottom:4px"><strong>Send via PandaDoc</strong> - tracked, e-signable document delivered to the client.</div>
+            <div class="panda-api-row">
+              <input class="panda-input" id="pandaApiKey" type="password" placeholder="PandaDoc API key" oninput="savePandaKey(this.value)">
+              <input class="panda-input" id="clientEmail" type="email" placeholder="Client email address" style="max-width:220px">
+            </div>
+            <div class="panda-template-row">
+              <select class="panda-select" id="pandaTemplate">
+                <option value="">Select tier template in PandaDoc</option>
+                <option value="basecamp">Base Camp - Verified Market Contacts</option>
+                <option value="ascent">The Ascent - Outreach Campaigns</option>
+                <option value="ridge">The Ridge - Conversion &amp; Visibility</option>
+                <option value="summit">The Summit - Full-Service Agency</option>
+              </select>
+              <button class="export-btn panda" onclick="sendToPandaDoc()"><i class="ti ti-send"></i> Send via PandaDoc</button>
+            </div>
+            <div class="export-note" id="pandaNote">Enter your PandaDoc API key and client email, select the tier template, then click Send.</div>
+            <div class="export-sep"></div>
+            <div class="export-row">
+              <button class="export-btn copy" onclick="copyProposal()"><i class="ti ti-copy"></i> Copy plain text</button>
+              <span class="export-note">Copies all sections as plain text - paste into any email or document.</span>
+            </div>
           </div>
         </div>
       </div>
@@ -1826,7 +1976,7 @@ function renderProposal(p,best,mismatch,withT,raw){
   document.getElementById('roadmap2').innerHTML=mkC('Month 1','Setup & Launch',m1,fb.m1)+mkC('Month 2','Optimise & Scale',m2,fb.m2)+mkC('Month 3','Review & Expand',m3,fb.m3);
   document.getElementById('ppEmpty2').style.display='none';document.getElementById('proposalDoc2').classList.add('show');
 }
-function resetProposal(){document.getElementById('proposalDoc2').classList.remove('show');document.getElementById('ppEmpty2').style.display='block';const btn=document.getElementById('genBtn');btn.disabled=false;btn.className='gen-btn';btn.innerHTML='<i class="ti ti-sparkles"></i> Generate proposal';}
+function resetProposal(){document.getElementById('proposalDoc2').classList.remove('show');document.getElementById('ppEmpty2').style.display='block';var ep=document.getElementById('exportPanel');if(ep)ep.style.display='none';const btn=document.getElementById('genBtn');btn.disabled=false;btn.className='gen-btn';btn.innerHTML='<i class="ti ti-sparkles"></i> Generate proposal';}
 function approveProposal(){document.getElementById('docStatus').className='pd-status approved';document.getElementById('docStatus').textContent='APPROVED';document.getElementById('abNote').textContent='Approved — copy and send to client.';showToast('Proposal approved','green');}
 function discardProposal(){resetProposal();showToast('Proposal discarded','gold');}
 function copyProposal(){const ids=['secO','secW','secR','secD','secE','secN'];const t=ids.map(id=>document.getElementById(id)?.value||'').join('\n\n');navigator.clipboard.writeText(t).then(()=>showToast('Copied to clipboard','blue'));}
@@ -1841,11 +1991,135 @@ function selectSingle(gid,el){
   document.querySelectorAll('#'+gid+' .chk').forEach(c=>c.classList.remove('on'));
   el.classList.add('on');
 }
+
+function setPandaStatus(cls,text){var el=document.getElementById('pandaStatus');if(el){el.className='panda-status '+cls;el.textContent=text;}}
+function setPandaNote(msg){var el=document.getElementById('pandaNote');if(el)el.innerHTML=msg;}
+
+function exportToPDF(){
+  var p=PROSPECTS[curIdx];if(!p){showToast('No prospect selected','gold');return;}
+  var ranked=TIER_ORDER.map(function(k){return Object.assign({key:k},TIER_DEFS[k],{score:p.scores[k]});});
+  ranked.sort(function(a,b){return b.score-a.score;});
+  var best=ranked[0];
+  var date=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  function gv(id){var el=document.getElementById(id);return el?el.value||'':(el&&el.textContent)||'';}
+  var secs=[
+    {label:'Opening',val:gv('secO')},
+    {label:'Why LeadStrong.ai',val:gv('secW')},
+    {label:'What We Deliver',val:gv('secD')},
+    {label:'How We Work Together',val:gv('secE')},
+    {label:'Next Step',val:gv('secN')}
+  ];
+  var haBlock=document.getElementById('haBlock');
+  if(haBlock&&haBlock.style.display!=='none')secs.push({label:'Phase 2 - HireAway',val:gv('secHA')});
+  var metaEl=document.getElementById('print-meta-top');
+  if(metaEl)metaEl.textContent=p.name+' - '+p.company+' | '+date;
+  var footEl=document.getElementById('print-ref-footer');
+  if(footEl)footEl.textContent='LeadStrong.ai - Powered by HireAway';
+  function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  var tierCard='<div class="print-tier-card"><div><div class="print-tier-name">'+esc(best.name)+'</div>'
+    +'<div class="print-tier-cat">'+esc(best.cat)+'</div></div>'
+    +'<div class="print-tier-price">'+esc(best.price)+'</div></div>';
+  function rmCard(idx,title){
+    var rmEl=document.getElementById('roadmap2');
+    var items=[];
+    if(rmEl){var cards=rmEl.querySelectorAll('.rm-card');if(cards[idx])items=Array.from(cards[idx].querySelectorAll('.rm-items li')).map(function(li){return li.textContent.trim();});}
+    return '<div class="print-rm-card"><div class="print-rm-month">Month '+(idx+1)+'</div>'
+      +'<div class="print-rm-title">'+esc(title)+'</div>'
+      +'<ul class="print-rm-items">'+items.map(function(it){return '<li>'+esc(it)+'</li>';}).join('')+'</ul></div>';
+  }
+  var html2='<div class="print-section"><div class="print-section-label">Opening</div><div class="print-body">'+esc(gv('secO'))+'</div></div>'
+    +'<div class="print-section"><div class="print-section-label">Why LeadStrong.ai</div><div class="print-body">'+esc(gv('secW'))+'</div></div>'
+    +'<div class="print-section"><div class="print-section-label">Our Recommendation</div>'+tierCard+'<div class="print-body">'+esc(gv('secR'))+'</div></div>'
+    +secs.slice(2).map(function(s){return '<div class="print-section"><div class="print-section-label">'+esc(s.label)+'</div><div class="print-body">'+esc(s.val)+'</div></div>';}).join('')
+    +'<div class="print-section"><div class="print-section-label">90-Day Roadmap</div><div class="print-roadmap">'
+    +rmCard(0,'Setup and Launch')+rmCard(1,'Optimise and Scale')+rmCard(2,'Review and Expand')
+    +'</div></div>';
+  var psEl=document.getElementById('print-sections');if(psEl)psEl.innerHTML=html2;
+  var paEl=document.getElementById('printArea');if(paEl)paEl.style.display='block';
+  window.print();
+  setTimeout(function(){if(paEl)paEl.style.display='none';},1500);
+}
+
+function approveProposal(){
+  document.getElementById('docStatus').className='pd-status approved';
+  document.getElementById('docStatus').textContent='APPROVED';
+  document.getElementById('abNote').textContent='Approved - choose export method below.';
+  var ep=document.getElementById('exportPanel');if(ep)ep.style.display='block';
+  showToast('Proposal approved','green');
+}
+
+var pandaKey='';
+function savePandaKey(val){pandaKey=val;}
+
+function sendToPandaDoc(){
+  var apiKey=pandaKey||(document.getElementById('pandaApiKey')||{value:''}).value.trim();
+  var email=(document.getElementById('clientEmail')||{value:''}).value.trim();
+  var template=(document.getElementById('pandaTemplate')||{value:''}).value;
+  if(!apiKey){setPandaStatus('error','No API key');setPandaNote('<strong>Paste your PandaDoc API key</strong> - find it in PandaDoc Settings / Integrations / API.');return;}
+  if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){setPandaStatus('error','Invalid email');setPandaNote('<strong>Enter a valid client email</strong> before sending.');return;}
+  if(!template){setPandaStatus('error','No template');setPandaNote('<strong>Select the tier template</strong> matching the recommended tier.');return;}
+  var p=PROSPECTS[curIdx];if(!p)return;
+  var ranked=TIER_ORDER.map(function(k){return Object.assign({key:k},TIER_DEFS[k],{score:p.scores[k]});});
+  ranked.sort(function(a,b){return b.score-a.score;});
+  var best=ranked[0];
+  var date=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  function gv(id){var el=document.getElementById(id);return el?el.value||'':(el&&el.textContent)||'';}
+  var nameParts=p.name.split(' ');
+  var payload={
+    name:'LeadStrong.ai Proposal - '+p.name+' - '+date,
+    recipients:[{email:email,first_name:nameParts[0]||p.name,last_name:nameParts.slice(1).join(' '),role:'Client'}],
+    tokens:[
+      {name:'client.name',value:p.name},{name:'client.company',value:p.company},{name:'client.email',value:email},
+      {name:'proposal.date',value:date},{name:'proposal.tier',value:best.name},{name:'proposal.price',value:best.price},
+      {name:'section.opening',value:gv('secO')},{name:'section.why',value:gv('secW')},
+      {name:'section.recommendation',value:gv('secR')},{name:'section.deliver',value:gv('secD')},
+      {name:'section.how_we_work',value:gv('secE')},{name:'section.next_step',value:gv('secN')},
+      {name:'section.hireaway',value:gv('secHA')}
+    ],
+    tags:['leadstrong','proposal',best.key]
+  };
+  setPandaStatus('sending','Sending...');
+  setPandaNote('Sending to PandaDoc...');
+  fetch('https://api.pandadoc.com/public/v1/documents',{
+    method:'POST',
+    headers:{'Authorization':'API-Key '+apiKey,'Content-Type':'application/json'},
+    body:JSON.stringify(payload)
+  }).then(function(res){
+    if(res.ok){return res.json().then(function(data){
+      setPandaStatus('sent','Sent');
+      setPandaNote('Document created in PandaDoc (ID: <strong>'+(data.id||data.uuid||'created')+'</strong>). Open <a href="https://app.pandadoc.com" target="_blank" style="color:#2ABFAA">PandaDoc</a> to send to '+email+'.');
+      showToast('Pushed to PandaDoc','green');
+    });}
+    return res.json().then(function(err){throw new Error(err.detail||err.message||'Status '+res.status);});
+  }).catch(function(err){
+    setPandaStatus('idle','See below');
+    setPandaNote('<strong>PandaDoc blocks direct browser calls (CORS).</strong> Two options:<br>'
+      +'<strong>A:</strong> Ask Koushik to add a server proxy - Claude will write the code.<br>'
+      +'<strong>B:</strong> Open <a href="https://app.pandadoc.com" target="_blank" style="color:#2ABFAA">PandaDoc</a> manually and use the Copy button to paste sections.<br>'
+      +'<details><summary style="cursor:pointer;color:#8AA0AA;font-size:11px;margin-top:6px">View payload for server use</summary>'
+      +'<pre style="font-size:10px;background:#F2F4F2;padding:8px;border-radius:6px;overflow-x:auto;margin-top:4px;white-space:pre-wrap;max-height:200px">'
+      +JSON.stringify(payload,null,2).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+      +'</pre></details>');
+    showToast('See PandaDoc instructions','gold');
+  });
+}
 function showToast(msg,color){const t=document.getElementById('toast');t.textContent=msg;t.className='toast '+color+' show';setTimeout(()=>t.classList.remove('show'),3000);}
 
 // INIT
 loadBrief(0);
 updateTpStatus(false,'No transcript — proposal uses form data only');
 </script>
+
+<div id="printArea" style="display:none">
+  <div class="print-header">
+    <div class="print-logo">Lead<span>Strong</span>.ai</div>
+    <div class="print-meta" id="print-meta-top">Engagement Proposal</div>
+  </div>
+  <div id="print-sections"></div>
+  <div class="print-footer">
+    <span>LeadStrong.ai - Powered by HireAway</span>
+    <span id="print-ref-footer"></span>
+  </div>
+</div>
 </body>
 </html>
